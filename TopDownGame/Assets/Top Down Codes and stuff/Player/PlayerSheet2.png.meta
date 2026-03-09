@@ -1,0 +1,511 @@
+fileFormatVersion: 2
+guid: c139e3842e739d741a4767a77ce26060
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5479630180728975389
+    second: PlayerSheet2_0
+  - first:
+      213: -5208231337745475199
+    second: PlayerSheet2_1
+  - first:
+      213: 7916861723275202736
+    second: PlayerSheet2_2
+  - first:
+      213: -6010437183881538340
+    second: PlayerSheet2_3
+  - first:
+      213: 6919680646109616241
+    second: PlayerSheet2_4
+  - first:
+      213: 5300635542541685744
+    second: PlayerSheet2_5
+  - first:
+      213: -4123213259148554303
+    second: PlayerSheet2_6
+  - first:
+      213: -4969635221882207754
+    second: PlayerSheet2_7
+  - first:
+      213: -107212458792474244
+    second: PlayerSheet2_8
+  - first:
+      213: -2664210842050206214
+    second: PlayerSheet2_9
+  - first:
+      213: -907516448688411855
+    second: PlayerSheet2_10
+  - first:
+      213: 2222387127057631371
+    second: PlayerSheet2_11
+  - first:
+      213: 7516340343401287889
+    second: PlayerSheet2_12
+  - first:
+      213: -5403087605749569539
+    second: PlayerSheet2_13
+  - first:
+      213: 5013284779392640965
+    second: PlayerSheet2_14
+  - first:
+      213: 5051205210275601068
+    second: PlayerSheet2_15
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player Down Idle
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 1010
+        width: 140
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d103cd6fd9e8b0c40800000000000000
+      internalID: 5479630180728975389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_1
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 1000
+        width: 140
+        height: 230
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1899f955135a8b7b0800000000000000
+      internalID: -5208231337745475199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_2
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1010
+        width: 140
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b094bfbac75edd60800000000000000
+      internalID: 7916861723275202736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_3
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1000
+        width: 140
+        height: 230
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd411f5d933a69ca0800000000000000
+      internalID: -6010437183881538340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Right Idle
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 690
+        width: 120
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1785286b2e4a70060800000000000000
+      internalID: 6919680646109616241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_5
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 690
+        width: 120
+        height: 220
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f3d10521f3af8940800000000000000
+      internalID: 5300635542541685744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_6
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 690
+        width: 120
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf0543f26767c6c0800000000000000
+      internalID: -4123213259148554303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_7
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 690
+        width: 120
+        height: 220
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f10170981f480bb0800000000000000
+      internalID: -4969635221882207754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Left Idle
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 370
+        width: 120
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79ad2636da138ef0800000000000000
+      internalID: -107212458792474244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 370
+        width: 120
+        height: 220
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af56ad0da52d60bd0800000000000000
+      internalID: -2664210842050206214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_10
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 370
+        width: 120
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13b6a10299ad763f0800000000000000
+      internalID: -907516448688411855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_11
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 370
+        width: 120
+        height: 220
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b88cbad315187de10800000000000000
+      internalID: 2222387127057631371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Up Idle
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 50
+        width: 140
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d01f5318b76f4860800000000000000
+      internalID: 7516340343401287889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_13
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 40
+        width: 140
+        height: 230
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df72bf803706405b0800000000000000
+      internalID: -5403087605749569539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_14
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 50
+        width: 140
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7229102f3c29540800000000000000
+      internalID: 5013284779392640965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerSheet2_15
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 40
+        width: 140
+        height: 230
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa5416506c791640800000000000000
+      internalID: 5051205210275601068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4658c754f78882e498820d0abb2e7a70
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Player Down Idle: 5479630180728975389
+      Player Left Idle: -107212458792474244
+      Player Right Idle: 6919680646109616241
+      Player Up Idle: 7516340343401287889
+      PlayerSheet2_1: -5208231337745475199
+      PlayerSheet2_10: -907516448688411855
+      PlayerSheet2_11: 2222387127057631371
+      PlayerSheet2_13: -5403087605749569539
+      PlayerSheet2_14: 5013284779392640965
+      PlayerSheet2_15: 5051205210275601068
+      PlayerSheet2_2: 7916861723275202736
+      PlayerSheet2_3: -6010437183881538340
+      PlayerSheet2_5: 5300635542541685744
+      PlayerSheet2_6: -4123213259148554303
+      PlayerSheet2_7: -4969635221882207754
+      PlayerSheet2_9: -2664210842050206214
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
