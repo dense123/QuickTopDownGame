@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Outline))]
+//[RequireComponent(typeof(Outline))]
 public class Interactable : MonoBehaviour
 {
     [SerializeField] bool isInteractedWith;
     [SerializeField] bool isHovering;
-    Outline outline;
+    //Outline outline;
 
 
     protected virtual void Start()
     {
-        outline = GetComponent<Outline>();
+        //outline = GetComponent<Outline>();
     }
 
     protected virtual void Update()
@@ -22,11 +22,11 @@ public class Interactable : MonoBehaviour
 
     protected void ActivateOutline()
     {
-        outline.enabled = true;
+        //outline.enabled = true;
     }
 
     protected void DeactivateOutline()
     {
-        outline.enabled = false;
+        //outline.enabled = false;
     }
 }
