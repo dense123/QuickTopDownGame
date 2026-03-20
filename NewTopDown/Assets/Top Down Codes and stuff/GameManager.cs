@@ -5,10 +5,10 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
-    [SerializeField] private PlayerMovement playermovement;
-    public PlayerMovement PlayerMovement => playermovement;
+    [SerializeField] private Player player;
+    public Player Player => player;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
     }
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public void SetDefaultWalk_Sprint(Toggle toggle)
     {
-        playermovement.IsDefaultWalking = toggle.isOn;
+        player.GetComponent<PlayerMovement>().IsDefaultWalking = toggle.isOn;
     }
 
 }
