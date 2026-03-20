@@ -1,16 +1,26 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public static GameManager instance;
+    [SerializeField] private PlayerMovement playermovement;
+    public PlayerMovement PlayerMovement => playermovement;
+
+    private void Start()
+    {
+        instance = this;
+    }
+
+    private void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetDefaultWalk_Sprint(Toggle toggle)
     {
-        
+        playermovement.IsDefaultWalking = toggle.isOn;
     }
+
 }
