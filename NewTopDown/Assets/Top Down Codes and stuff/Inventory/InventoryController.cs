@@ -21,10 +21,10 @@ public class InventoryController : MonoBehaviour
         for (int i = 0; i < player.MaxInventorySlots; i++)
         {
             GameObject obj = Instantiate(slotPrefab, inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform);
-
-            for (int z = 0; z < itemPrefab.Length; z++)
+            obj.name = $"Slot {i}";
+            if(i < itemPrefab.Length)
             {
-                //Instantiate(itemPrefab[z], obj.transform);
+                Instantiate(itemPrefab[i], obj.transform);
             }
         }
 
