@@ -16,7 +16,11 @@ public class PlayerMovement : MonoBehaviour
 
 
     [SerializeField] private bool isDefaultWalking; // Will be a setting for the player
-    public bool IsDefaultWalking { get => isDefaultWalking; set => isDefaultWalking = value; }
+    public bool IsDefaultWalking
+    {
+        get => isDefaultWalking;
+        set => isDefaultWalking = value;
+    }
 
     bool isShiftPressed;
     bool isMoving;
