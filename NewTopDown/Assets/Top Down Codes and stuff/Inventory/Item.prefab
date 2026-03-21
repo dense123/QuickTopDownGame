@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9004818970501327042}
   - component: {fileID: 1387421729815358395}
   - component: {fileID: 2279777838609037011}
+  - component: {fileID: 1242435676079800568}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -88,3 +89,15 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1242435676079800568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4671540737405626946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84a91a65eee1fb4982e17b0789f1583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
