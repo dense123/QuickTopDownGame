@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -21,6 +22,11 @@ public class GameManager : MonoBehaviour
     public void SetDefaultWalk_Sprint(Toggle toggle)
     {
         player.GetComponent<PlayerMovement>().IsDefaultWalking = toggle.isOn;
+    }
+
+    public void ResetGameDEBUG()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
