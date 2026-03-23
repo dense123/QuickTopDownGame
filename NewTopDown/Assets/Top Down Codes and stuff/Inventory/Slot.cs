@@ -11,7 +11,6 @@ public class Slot : MonoBehaviour
         set
         {
             currentItemInThisSlot = value;
-             
         }
     }
 
