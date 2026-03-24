@@ -44,7 +44,6 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.LogWarning(eventData.pointerEnter);
         
 
         if(eventData.pointerEnter != null)
@@ -64,32 +63,44 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             }
             else if (eventData.pointerEnter.GetComponent<Item>() != null)
             {
-                Debug.Log($"{this.name} Item");
+                //Debug.Log($"{this.name} Item");
+                //Item overrideItem = eventData.pointerEnter.GetComponent<Item>();
+
+                //droppedSlot = overrideItem.GetComponentInParent<Slot>();
+                //if (droppedSlot == null)
+                //    Debug.LogWarning($"{droppedSlot} not assigned! <br> Parent for {overrideItem} is not slot!");
+
+                //droppedSlot.CurrentItemInSlot = null;
+                //slot.CurrentItemInSlot = null;
+
+                //overrideItem.transform.position = originalSlotPosition.position;
+                //overrideItem.transform.SetParent(originalSlotPosition);
+                //slot.CurrentItemInSlot = overrideItem.gameObject;
+
+                //originalSlotPosition = droppedSlot.transform;
+                //slot = droppedSlot;
                 Item overrideItem = eventData.pointerEnter.GetComponent<Item>();
-
                 droppedSlot = overrideItem.GetComponentInParent<Slot>();
-                if (droppedSlot == null)
-                    Debug.LogWarning($"{droppedSlot} not assigned! <br> Parent for {overrideItem} is not slot!");
-
-                droppedSlot.CurrentItemInSlot = null;
-                slot.CurrentItemInSlot = null;
-
+                
                 overrideItem.transform.position = originalSlotPosition.position;
-                overrideItem.transform.SetParent(originalSlotPosition);
-                slot.CurrentItemInSlot = overrideItem.gameObject;
+                transform.position = droppedSlot.transform.position;
+
+                overrideItem.transform.SetParent(originalSlotPosition.transform);
+                originalSlotPosition.GetComponent<Slot>().CurrentItemInSlot = overrideItem.gameObject;
 
                 originalSlotPosition = droppedSlot.transform;
                 slot = droppedSlot;
+
+
             }
+
         }
-        else
-        {
-        }
-            transform.position = originalSlotPosition.position;
-            transform.SetParent(originalSlotPosition);
+
+        transform.position = originalSlotPosition.position;
+        transform.SetParent(originalSlotPosition);
         slot.CurrentItemInSlot = this.gameObject;
-            canvasGroup.alpha = 1f;
-            canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
     }
     //public void OnEndDrag(PointerEventData eventData)
     //{
