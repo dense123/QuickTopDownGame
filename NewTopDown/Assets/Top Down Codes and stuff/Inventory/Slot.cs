@@ -14,11 +14,17 @@ public class Slot : MonoBehaviour
         get => currentItemInThisSlot;
         set
         {
-            currentItemInThisSlot = value;
             if (value != null)
+            {
+                
                 currentText.SetText(value.name);
+                
+            }
             else
+            {
                 currentText.SetText(".");
+            }
+            currentItemInThisSlot = value;
 
         }
     }
