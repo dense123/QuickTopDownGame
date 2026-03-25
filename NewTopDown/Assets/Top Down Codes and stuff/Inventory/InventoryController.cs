@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,27 +15,23 @@ public class InventoryController : MonoBehaviour
     public GameObject inventoryPage;
     public GameObject slotPrefab;
     public GameObject[] itemPrefab;
+    ItemDictionary itemDictionary;
 
     void Start()
     {
         player = GameManager.instance.Player;
         slotCount = player.MaxInventorySlots;
-        for (int i = 0; i < player.MaxInventorySlots; i++)
-        {
-            GameObject obj = Instantiate(slotPrefab, inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform);
-            obj.name = $"Slot {i}";
-            if(i < itemPrefab.Length)
-            {
-                Instantiate(itemPrefab[i], obj.transform);
-            }
-        }
-
+/*        //for (int i = 0; i < player.MaxInventorySlots; i++)
+        //{
+        //    GameObject obj = Instantiate(slotPrefab, inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform);
+        //    obj.name = $"Slot {i}";
+        //    if(i < itemPrefab.Length)
+        //    {
+        //        Instantiate(itemPrefab[i], obj.transform);
+        //    }
+        //}
+*/
         player.InventorySizeChanged += UpdateSlots;
-    }
-
-    void Update()
-    {
-        
     }
 
     void UpdateSlots()
@@ -43,6 +41,60 @@ public class InventoryController : MonoBehaviour
             slotCount = player.MaxInventorySlots;
             GameObject obj = Instantiate(slotPrefab, inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform);
             obj.name = "NEW SLOT";
+        }
+    }
+
+    // For saving game
+    public List<InventorySaveData> GetInventoryItems()
+    {
+        List<InventorySaveData> invData = new List<InventorySaveData>();
+
+        // Getting the slots gameobjects, if using too much computing power
+        // set a serialized field and put in the slots there.
+        foreach(Transform slotTransform in inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if(slot.CurrentItemInSlot != null)
+            {
+                Item item = slot.CurrentItemInSlot.GetComponent<Item>();
+                invData.Add(new InventorySaveData { ItemID = item.ID, SlotIndex = slotTransform.GetSiblingIndex() });
+            }
+        }
+            //if (allSlots.CompareTag("AllSlots"))
+            //{
+            //    foreach (Transform slotTransform in allSlots)
+            //    {
+            //    }
+            //}
+        return invData;
+    }
+
+    // For loading
+    void SetInventoryItems(List<InventorySaveData> inventorySaveData)
+    {
+        // Destroy duplicates apparently
+        foreach (Transform slotTransform in inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform)
+        {
+            Destroy(slotTransform.gameObject);
+        }
+        for (int i = 0; i < slotCount; i++)
+        {
+            GameObject obj = Instantiate(slotPrefab, inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform);
+            obj.name = $"Slot {i}";
+        }
+
+        foreach (InventorySaveData loadedData in inventorySaveData)
+        {
+            Slot slot = inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform.GetChild(loadedData.SlotIndex).GetComponent<Slot>();
+            if (loadedData.SlotIndex < slotCount)
+            {
+                GameObject itemPrefab = itemDictionary.GetItemPrefab(loadedData.ItemID);
+                if (itemPrefab != null)
+                {
+                    Instantiate(itemPrefab, slot.transform);
+                    slot.CurrentItemInSlot = itemPrefab;
+                }
+            }
         }
     }
 }
