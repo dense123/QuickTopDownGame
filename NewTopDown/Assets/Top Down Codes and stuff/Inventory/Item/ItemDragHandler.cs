@@ -20,10 +20,14 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             Debug.LogWarning($"{transform.parent.name} doesn't contain slot");
 
         canvasGroup = GetComponent<CanvasGroup>();
-        if (transform.root.GetChild(0).GetComponent<Canvas>() != null)
-            canvasTopMostParent = transform.root.GetChild(0);
+        //if (transform.root.GetChild(0).GetComponent<Canvas>() != null)
+        //    canvasTopMostParent = transform.root.GetChild(0);
+        //else
+        //    Debug.LogWarning($"transform.root.GetChild(0) is not canvas, it's {transform.root.GetChild(0).name}");
+    if (transform.root.GetComponent<Canvas>() != null)
+            canvasTopMostParent = transform.root;
         else
-            Debug.LogWarning($"transform.root.GetChild(0) is not canvas, it's {transform.root.GetChild(0).name}");
+            Debug.LogWarning($"transform.root is not canvas, it's {transform.root.name}");
     }
 
     public void OnBeginDrag(PointerEventData eventData)

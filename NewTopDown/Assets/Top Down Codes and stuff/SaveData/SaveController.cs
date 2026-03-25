@@ -20,8 +20,6 @@ public class SaveController : MonoBehaviour
     public void SaveGame()
     {
         SaveData saveData = new SaveData{
-            // Save script is under game manager which has game manager script,
-            // which has player variable.
             playerPosition = player.transform.position
         };
 

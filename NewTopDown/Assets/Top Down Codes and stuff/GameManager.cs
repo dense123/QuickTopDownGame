@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public void DisplayDebugText(string text)
     {
         // Need to be under canvas gameobject to display
-        GameObject obj = Instantiate(DEBUG_TEXT_GENERAL, transform.GetChild(0)); // Might have errors in future, but lazy now
+        GameObject obj = Instantiate(DEBUG_TEXT_GENERAL, FindFirstObjectByType<Canvas>().transform); // Might have errors in future, but lazy now
         obj.GetComponent<TextMeshProUGUI>().SetText(text);
         //obj.transform.position = 
         Destroy(obj, 5f);
