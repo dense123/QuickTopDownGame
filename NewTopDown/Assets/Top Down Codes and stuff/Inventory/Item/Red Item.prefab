@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 9004818970501327042}
   - component: {fileID: 1387421729815358395}
   - component: {fileID: 2279777838609037011}
-  - component: {fileID: 1242435676079800568}
+  - component: {fileID: 3009509978389605601}
   m_Layer: 5
-  m_Name: Grey Item
+  m_Name: Red Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -89,7 +89,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1242435676079800568
+--- !u!114 &3009509978389605601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,6 +98,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4671540737405626946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84a91a65eee1fb4982e17b0789f1583, type: 3}
+  m_Script: {fileID: 11500000, guid: ee50e2e497c7da647a3ef386504f8231, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDragHandler
