@@ -14,27 +14,24 @@ public class Slot : MonoBehaviour
         get => currentItemInThisSlot;
         set
         {
-            if (value != null)
-            {
-                
-                currentText.SetText(value.name);
-                
-            }
-            else
-            {
-                currentText.SetText(".");
-            }
             currentItemInThisSlot = value;
+
+            if (currentText == null)
+            {
+                //Debug.LogWarning("currentText not initialized yet");
+                return;
+            }
+
+            currentText.SetText(value != null ? value.name : ".");
 
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         GameObject obj = Instantiate(text, transform);
         currentText = obj.GetComponent<TextMeshProUGUI>();
         currentText.transform.localPosition = Vector3.up * 2f;
-
     }
 
     private void Update()

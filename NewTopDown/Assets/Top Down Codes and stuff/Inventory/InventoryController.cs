@@ -21,16 +21,23 @@ public class InventoryController : MonoBehaviour
     {
         player = GameManager.instance.Player;
         slotCount = player.MaxInventorySlots;
-/*        //for (int i = 0; i < player.MaxInventorySlots; i++)
-        //{
-        //    GameObject obj = Instantiate(slotPrefab, inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform);
-        //    obj.name = $"Slot {i}";
-        //    if(i < itemPrefab.Length)
-        //    {
-        //        Instantiate(itemPrefab[i], obj.transform);
-        //    }
-        //}
-*/
+
+        transform.GetChild(0).TryGetComponent(out ItemDictionary itemDic);
+        if (itemDic != null)
+            itemDictionary = itemDic;
+        else
+            GameManager.instance.nullReference_debugLogWarning("itemDictionary", this.name);
+
+            /*        //for (int i = 0; i < player.MaxInventorySlots; i++)
+                    //{
+                    //    GameObject obj = Instantiate(slotPrefab, inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform);
+                    //    obj.name = $"Slot {i}";
+                    //    if(i < itemPrefab.Length)
+                    //    {
+                    //        Instantiate(itemPrefab[i], obj.transform);
+                    //    }
+                    //}
+            */
         player.InventorySizeChanged += UpdateSlots;
     }
 
@@ -70,7 +77,7 @@ public class InventoryController : MonoBehaviour
     }
 
     // For loading
-    void SetInventoryItems(List<InventorySaveData> inventorySaveData)
+    public void SetInventoryItems(List<InventorySaveData> inventorySaveData)
     {
         // Destroy duplicates apparently
         foreach (Transform slotTransform in inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform)
@@ -85,16 +92,30 @@ public class InventoryController : MonoBehaviour
 
         foreach (InventorySaveData loadedData in inventorySaveData)
         {
+            // Get allSlots gameobject
             Slot slot = inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform.GetChild(loadedData.SlotIndex).GetComponent<Slot>();
-            if (loadedData.SlotIndex < slotCount)
+            if (slot != null)
             {
-                GameObject itemPrefab = itemDictionary.GetItemPrefab(loadedData.ItemID);
-                if (itemPrefab != null)
+                //GameManager.instance.nullReference_debugLogWarning("slot", this.name, "under function setInventoryItems");
+                Debug.Log(slot);
+                //continue;
+            }
+            if (itemDictionary != null)
+            {
+                if (loadedData.SlotIndex < slotCount)
                 {
-                    Instantiate(itemPrefab, slot.transform);
-                    slot.CurrentItemInSlot = itemPrefab;
+                    GameObject itemPrefab = itemDictionary.GetItemPrefab(loadedData.ItemID);
+                    if (itemPrefab != null)
+                    {
+                        Instantiate(itemPrefab, slot.transform);
+                        slot.CurrentItemInSlot = itemPrefab;
+                    }
+                    else
+                        Debug.Log($"Under {this.name}, no itemPrefab");
                 }
             }
+            else
+                GameManager.instance.nullReference_debugLogWarning("itemDictionary", this.name, "This is under SetInventoryItems");
         }
     }
 }

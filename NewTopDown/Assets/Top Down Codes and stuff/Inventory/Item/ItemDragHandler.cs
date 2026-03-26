@@ -15,6 +15,8 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         {
             slot = GetComponentInParent<Slot>();
             slot.CurrentItemInSlot = this.gameObject;
+            GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
         }
         else
             Debug.LogWarning($"{transform.parent.name} doesn't contain slot");
@@ -24,7 +26,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         //    canvasTopMostParent = transform.root.GetChild(0);
         //else
         //    Debug.LogWarning($"transform.root.GetChild(0) is not canvas, it's {transform.root.GetChild(0).name}");
-    if (transform.root.GetComponent<Canvas>() != null)
+        if (transform.root.GetComponent<Canvas>() != null)
             canvasTopMostParent = transform.root;
         else
             Debug.LogWarning($"transform.root is not canvas, it's {transform.root.name}");

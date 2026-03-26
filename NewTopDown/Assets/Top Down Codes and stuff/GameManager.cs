@@ -41,4 +41,12 @@ public class GameManager : MonoBehaviour
         Destroy(obj, 5f);
     }
 
+    public void nullReference_debugLogWarning(string var_Name, string script_Name)
+    {
+        Debug.LogWarning($"{var_Name} is null under {script_Name}");
+    }
+    public void nullReference_debugLogWarning(string var_Name, string script_Name, string additional_Text)
+    {
+        Debug.LogWarning($"{var_Name} is null under {script_Name}. {additional_Text}");
+    }
 }
