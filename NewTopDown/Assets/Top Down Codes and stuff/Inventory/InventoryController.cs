@@ -14,7 +14,7 @@ public class InventoryController : MonoBehaviour
 
     public GameObject inventoryPage;
     public GameObject slotPrefab;
-    public GameObject[] itemPrefab;
+    public GameObject genericItemUIPrefab;
     ItemDictionary itemDictionary;
 
     void Start()
@@ -51,7 +51,7 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    // For saving game
+    // For saving game for inventory
     public List<InventorySaveData> GetInventoryItems()
     {
         List<InventorySaveData> invData = new List<InventorySaveData>();
@@ -67,16 +67,10 @@ public class InventoryController : MonoBehaviour
                 invData.Add(new InventorySaveData { ItemID = item.ID, SlotIndex = slotTransform.GetSiblingIndex() });
             }
         }
-            //if (allSlots.CompareTag("AllSlots"))
-            //{
-            //    foreach (Transform slotTransform in allSlots)
-            //    {
-            //    }
-            //}
         return invData;
     }
 
-    // For loading
+    // For loading inside inventory
     public void SetInventoryItems(List<InventorySaveData> inventorySaveData)
     {
         // Destroy duplicates apparently
@@ -96,19 +90,23 @@ public class InventoryController : MonoBehaviour
             Slot slot = inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform.GetChild(loadedData.SlotIndex).GetComponent<Slot>();
             if (slot != null)
             {
-                //GameManager.instance.nullReference_debugLogWarning("slot", this.name, "under function setInventoryItems");
                 Debug.Log(slot);
-                //continue;
             }
             if (itemDictionary != null)
             {
                 if (loadedData.SlotIndex < slotCount)
                 {
-                    GameObject itemPrefab = itemDictionary.GetItemPrefab(loadedData.ItemID);
-                    if (itemPrefab != null)
+                    Item ItemData = itemDictionary.GetItemData(loadedData.ItemID);
+                    if (ItemData != null)
                     {
-                        Instantiate(itemPrefab, slot.transform);
-                        slot.CurrentItemInSlot = itemPrefab;
+                        GameObject obj = Instantiate(genericItemUIPrefab, slot.transform);
+
+                        // send item data into script object handler to display whatever
+                        obj.GetComponent<ItemScriptObjectHandler>().itemData = ItemData;
+                        // have a script inside the item prefab to store and display all these
+
+
+                        slot.CurrentItemInSlot = genericItemUIPrefab;
                     }
                     else
                         Debug.Log($"Under {this.name}, no itemPrefab");
