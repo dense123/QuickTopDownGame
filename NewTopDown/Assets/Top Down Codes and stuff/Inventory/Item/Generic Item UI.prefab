@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 9004818970501327042}
   - component: {fileID: 1387421729815358395}
   - component: {fileID: 2279777838609037011}
-  - component: {fileID: 3009509978389605601}
-  - component: {fileID: -708891557691100653}
+  - component: {fileID: 10586028400542135}
+  - component: {fileID: -4716977925440396260}
   m_Layer: 5
-  m_Name: Red Item
+  m_Name: Generic Item UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9004818970501327042
 CanvasRenderer:
@@ -61,14 +61,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300152, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
+  m_Sprite: {fileID: 7516340343401287889, guid: c139e3842e739d741a4767a77ce26060, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -90,7 +90,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &3009509978389605601
+--- !u!114 &10586028400542135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee50e2e497c7da647a3ef386504f8231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemDragHandler
---- !u!114 &-708891557691100653
+--- !u!114 &-4716977925440396260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +111,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4671540737405626946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84a91a65eee1fb4982e17b0789f1583, type: 3}
+  m_Script: {fileID: 11500000, guid: ea389ef4fc157264ba1a4c93482bfc04, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
-  ID: 0
+  m_EditorClassIdentifier: Assembly-CSharp::ItemScriptObjectHandler
+  itemData: {fileID: 0}
+  itemID: 0
+  isUIItem: 1
+  spriteRenderer: {fileID: 0}
+  spriteImage: {fileID: 1387421729815358395}
+  description: 

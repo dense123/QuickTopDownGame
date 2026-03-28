@@ -4,31 +4,30 @@ using UnityEngine;
 
 public class ItemDictionary : MonoBehaviour
 {
-
-    public List<Item> ItemPrefabs;
-    Dictionary<int, GameObject> itemDictionary;
+    public List<Item> itemData;
+    Dictionary<int, Item> itemDictionary;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        itemDictionary = new Dictionary<int, GameObject>();
+        itemDictionary = new Dictionary<int, Item>();
 
-        for (int i = 0; i < ItemPrefabs.Count; i++)
+        for (int i = 0; i < itemData.Count; i++)
         {
-            if (ItemPrefabs[i] != null)
+            if (itemData[i] != null)
             {
-                ItemPrefabs[i].ID = i + 1;
+                itemData[i].ID = i + 1;
             }
         }
-        foreach (Item item in ItemPrefabs)
+        foreach (Item item in itemData)
         {
-            itemDictionary[item.ID] = item.gameObject;
+            itemDictionary[item.ID] = item;
         }
     }
 
-    public GameObject GetItemPrefab(int ItemID)
+    public Item GetItemData(int ItemID)
     {
-        itemDictionary.TryGetValue(ItemID, out GameObject item);
+        itemDictionary.TryGetValue(ItemID, out Item item);
         if (item == null)
             Debug.LogWarning($"{ItemID} has nothing !!!!!");
         return item;

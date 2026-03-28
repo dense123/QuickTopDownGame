@@ -16,22 +16,22 @@ public class Slot : MonoBehaviour
         {
             currentItemInThisSlot = value;
 
-            if (currentText == null)
-            {
-                //Debug.LogWarning("currentText not initialized yet");
-                return;
-            }
+            //if (currentText == null)
+            //{
+            //    //Debug.LogWarning("currentText not initialized yet");
+            //    return;
+            //}
 
-            currentText.SetText(value != null ? value.name : ".");
+            //currentText.SetText(value != null ? value.name : ".");
 
         }
     }
 
     private void Awake()
     {
-        GameObject obj = Instantiate(text, transform);
-        currentText = obj.GetComponent<TextMeshProUGUI>();
-        currentText.transform.localPosition = Vector3.up * 2f;
+        //GameObject obj = Instantiate(text, transform);
+        //currentText = obj.GetComponent<TextMeshProUGUI>();
+        //currentText.transform.localPosition = Vector3.up * 2f;
     }
 
     private void Update()
