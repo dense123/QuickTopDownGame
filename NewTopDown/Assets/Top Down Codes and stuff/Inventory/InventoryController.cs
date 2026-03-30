@@ -63,8 +63,8 @@ public class InventoryController : MonoBehaviour
             Slot slot = slotTransform.GetComponent<Slot>();
             if(slot.CurrentItemInSlot != null)
             {
-                Item item = slot.CurrentItemInSlot.GetComponent<Item>();
-                invData.Add(new InventorySaveData { ItemID = item.ID, SlotIndex = slotTransform.GetSiblingIndex() });
+                ItemScriptObjectHandler item = slot.CurrentItemInSlot.GetComponent<ItemScriptObjectHandler>();
+                invData.Add(new InventorySaveData { ItemID = item.ItemID, SlotIndex = slotTransform.GetSiblingIndex() });
             }
         }
         return invData;

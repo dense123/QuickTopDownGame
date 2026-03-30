@@ -7,14 +7,18 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
+
+
     [SerializeField] private Player player;
     public Player Player => player;
     
     [SerializeField] GameObject DEBUG_TEXT_GENERAL;
+    public GameObject SettingsPage;
 
     private void Awake()
     {
         instance = this;
+        SettingsPage.GetComponentInChildren<Toggle>().onValueChanged.AddListener(SetDefaultWalk_Sprint);// returns bool whenever changes
     }
 
     private void Update()
@@ -22,9 +26,16 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SetDefaultWalk_Sprint(Toggle toggle)
+
+    public void SetDefaultWalk_Sprint(bool isDefaultWalking)
     {
-        player.GetComponent<PlayerMovement>().IsDefaultWalking = toggle.isOn;
+        player.GetComponent<PlayerMovement>().IsDefaultWalking = isDefaultWalking;
+        SettingsPage.GetComponentInChildren<Toggle>().isOn = isDefaultWalking;
+    }
+
+    public bool GetDefaultWalk_Sprint()
+    {
+        return player.GetComponent<PlayerMovement>().IsDefaultWalking;
     }
 
     public void ResetGameDEBUG()

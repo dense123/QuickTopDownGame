@@ -5,6 +5,7 @@ public class SaveController : MonoBehaviour
 {
 
     private string SaveLocation;
+    private string SettingsSaveLocation;
     Player player;
     InventoryController inventoryController;
 
@@ -17,6 +18,7 @@ public class SaveController : MonoBehaviour
         else
             Debug.LogWarning($"{this.name} doesn't have reference to Inventory Controller");
         SaveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
+        SettingsSaveLocation = Path.Combine(Application.persistentDataPath, "settingsData.json");
 
         LoadGame();
     }
@@ -30,11 +32,20 @@ public class SaveController : MonoBehaviour
             inventorySaveData = inventoryController.GetInventoryItems()
         };
 
-
         File.WriteAllText(SaveLocation, JsonUtility.ToJson(saveData));
         GameManager.instance.DisplayDebugText(JsonUtility.ToJson(saveData).ToString());
     }
 
+    public void SaveSettings()
+    {
+        SettingsData settingsData = new SettingsData
+        {
+            isDefaultWalking = GameManager.instance.GetDefaultWalk_Sprint()
+        };
+
+        File.WriteAllText(SettingsSaveLocation, JsonUtility.ToJson(settingsData));
+        GameManager.instance.DisplayDebugText(JsonUtility.ToJson(settingsData).ToString());
+    }
 
     public void LoadGame()
     {
@@ -47,6 +58,16 @@ public class SaveController : MonoBehaviour
         }
         else
             SaveGame();
+
+        if (File.Exists(SettingsSaveLocation))
+        {
+            SettingsData settingsData = JsonUtility.FromJson<SettingsData>(File.ReadAllText(SettingsSaveLocation));
+
+            GameManager.instance.SetDefaultWalk_Sprint(settingsData.isDefaultWalking);
+        }
+
+        else
+            SaveSettings();
     }
 
 }

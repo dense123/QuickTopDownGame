@@ -4,11 +4,10 @@ using UnityEngine.InputSystem;
 public class Player : Character
 {
     private int maxInventorySlots = 32;
-
     public int MaxInventorySlots => maxInventorySlots;
 
     public System.Action InventorySizeChanged;
-    
+
 
 
     public void GainExp(InputAction.CallbackContext context)

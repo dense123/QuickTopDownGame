@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Player))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] Animator animator;
 
     private float walkingMoveSpeed = 200f;
     private float sprintingMoveSpeed = 500f;
     Vector2 moveInput;
+    [SerializeField] Character character;   
+    
 
+    Rigidbody2D rb;
+    Animator animator; // Not serialised as only get from character, not the component
 
 
     [SerializeField] private bool isDefaultWalking; // Will be a setting for the player
@@ -31,10 +33,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (rb == null)
-            rb = GetComponent<Rigidbody2D>();
-        if (animator == null)
-            animator = GetComponentInChildren<Animator>();
+        character = GetComponent<Character>();
+        rb = character.Rb;
+        animator = character.Animator;
     }
 
     // Update is called once per frame
@@ -65,6 +66,10 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetFloat("Last Input X", moveInput.x);
                 animator.SetFloat("Last Input Y", moveInput.y);
             }
+            if (moveInput.x != 0)
+                character.lastInputFacing = moveInput.x > 0 ? Character.LastInputFacingNow.Right : Character.LastInputFacingNow.Left;
+            else if (moveInput.y != 0)
+                character.lastInputFacing = moveInput.y > 0 ? Character.LastInputFacingNow.Up : Character.LastInputFacingNow.Down;
             moveInput = context.ReadValue<Vector2>();
             isMoving = moveInput != Vector2.zero;
             animator.SetFloat("Current Input X", moveInput.x);

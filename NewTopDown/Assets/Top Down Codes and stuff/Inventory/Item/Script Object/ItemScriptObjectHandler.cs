@@ -5,17 +5,23 @@ using UnityEngine.UI;
 public class ItemScriptObjectHandler : MonoBehaviour
 {
     public Item itemData;
+    private Item previousItemData;
     [SerializeField] private int itemID;
+    public int ItemID => itemID;
+    public Image spriteImage;
+    [TextArea]
+    public string description;
     [SerializeField] bool isUIItem;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
-    [SerializeField] Image spriteImage;
-    [TextArea]
-    public string description;
 
 
-    void OnValidate()
+    void Update()
     {
+        if (itemData == previousItemData)
+        {
+            return;
+        }
         Debug.LogWarning($"{this.name} Changed values. Now applying changes");
         //itemData = new Item();
         if (itemData == null)
@@ -44,7 +50,7 @@ public class ItemScriptObjectHandler : MonoBehaviour
                     return;
                 }
                 else
-                    Debug.LogWarning($"Found in child");
+                    Debug.LogWarning($"Found in child for Sprite Renderer");
             }
             spriteRenderer.sprite = itemData.artwork;
             rb.mass = itemData.mass;
@@ -63,10 +69,11 @@ public class ItemScriptObjectHandler : MonoBehaviour
                     return;
                 }
                 else
-                    Debug.LogWarning($"Found in child");
+                    Debug.LogWarning($"Found in child for Sprite Image");
             }
             spriteImage.sprite = itemData.artwork;
         }
 
+        previousItemData = itemData;
     }
 }

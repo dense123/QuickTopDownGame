@@ -13,6 +13,6 @@ public class InteractableBasicObjects : Interactable
     // Update is called once per frame
     protected override void Update()
     {
-        
+        base.Update();
     }
 }
