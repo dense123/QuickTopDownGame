@@ -1,7 +1,7 @@
 using UnityEditor;
 using gui = UnityEditor.EditorGUILayout;
 
-[CustomEditor(typeof(ItemScriptObjectHandler))]
+//[CustomEditor(typeof(ItemScriptObjectHandler))]
 public class ItemScriptObjectHandlerEditor : Editor
 {
     string rb = "rb";

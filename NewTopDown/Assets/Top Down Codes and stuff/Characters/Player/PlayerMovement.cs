@@ -66,10 +66,14 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetFloat("Last Input X", moveInput.x);
                 animator.SetFloat("Last Input Y", moveInput.y);
             }
+            
+            // Need to fix bug
             if (moveInput.x != 0)
                 character.lastInputFacing = moveInput.x > 0 ? Character.LastInputFacingNow.Right : Character.LastInputFacingNow.Left;
             else if (moveInput.y != 0)
                 character.lastInputFacing = moveInput.y > 0 ? Character.LastInputFacingNow.Up : Character.LastInputFacingNow.Down;
+            
+            
             moveInput = context.ReadValue<Vector2>();
             isMoving = moveInput != Vector2.zero;
             animator.SetFloat("Current Input X", moveInput.x);

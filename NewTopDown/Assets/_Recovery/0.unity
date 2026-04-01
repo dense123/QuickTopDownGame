@@ -13686,10 +13686,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRaycasting
   numberOfRays: 10
   coneAngle: 170
-  distance: 1
+  distance: 2
   raycastLayer:
     serializedVersion: 2
     m_Bits: 8
+  hitList: []
   character: {fileID: 0}
 --- !u!1 &1358007433
 GameObject:
