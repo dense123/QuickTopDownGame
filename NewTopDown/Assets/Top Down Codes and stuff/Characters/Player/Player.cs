@@ -9,14 +9,16 @@ public class Player : Character
     public System.Action InventorySizeChanged;
 
 
-
-    public void GainExp(InputAction.CallbackContext context)
+    protected override void Start()
     {
-        if (context.performed)
-        {
-            currentExp += 10;
-            LevelUp();
-        }
+        base.Start();
+        healthEvent.OnHealthEvent += GainExp;
+    }
+
+    public void GainExp()
+    {
+        currentExp += 10;
+        LevelUp();
     }
 
     protected override void LevelUpAdditionalLogic()

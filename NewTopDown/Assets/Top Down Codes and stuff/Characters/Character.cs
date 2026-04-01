@@ -23,6 +23,8 @@ public class Character : MonoBehaviour
     public Rigidbody2D Rb { get; private set; }
     public Animator Animator { get; private set; }
 
+    public HealthEvent healthEvent;
+
 
     public int CurrentLevel { 
         
@@ -43,7 +45,11 @@ public class Character : MonoBehaviour
             if (Animator == null)
                 GameManager.instance.nullReference_debugLogWarning("animator", this.name, "Getting from child, I assume this doesnt have child with sprite?");
         }
+    }
 
+    protected virtual void Start()
+    {
+        healthEvent.OnHealthEvent += PlaySound;
     }
 
     protected void LevelUp() 
@@ -60,5 +66,10 @@ public class Character : MonoBehaviour
     protected virtual void LevelUpAdditionalLogic()
     {
 
+    }
+
+    void PlaySound()
+    {
+        AudioManager.instance.PlaySound("TestSound");
     }
 }

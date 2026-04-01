@@ -19,8 +19,11 @@ public class PlayerInteract : MonoBehaviour
     {
         if (context.started)
         {
-            interactionTarget = playerRaycasting.GetClosestHitCollider();
-            Debug.Log(interactionTarget.name);
+            if (interactionTarget != null)
+            {
+                interactionTarget = playerRaycasting.GetClosestHitCollider();
+                interactionTarget.GetComponent<Interactable>().isInteractedWith = true;
+            }        
         }
     }
 
