@@ -15,41 +15,34 @@ public class TabController : MonoBehaviour
     void Start()
     {
         currentPageIndex = 0;
-        SetPageActive(currentPageIndex);
-    }
-
-    public void SetPageActive(int index)
-    {
         for (int i = 0; i < tabImages.Length; i++)
         {
             pageImages[i].SetActive(false);
             tabImages[i].color = Color.grey;
 
         }
-        currentPageIndex = index;
         pageImages[currentPageIndex].SetActive(true);
         tabImages[currentPageIndex].color = Color.white;
+    }
 
+    public void SetPageActive(int newIndex)
+    {
+
+        pageImages[currentPageIndex].SetActive(false);
+        tabImages[currentPageIndex].color = Color.grey;
+
+        currentPageIndex = newIndex;
+
+        pageImages[currentPageIndex].SetActive(true);
+        tabImages[currentPageIndex].color = Color.white;
     }
 
     public void SetPageActiveLeft(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            int previousPageIndex = currentPageIndex;
-            currentPageIndex--;
-            if (0 <= currentPageIndex)
-            {
-                pageImages[previousPageIndex].SetActive(false);
-                tabImages[previousPageIndex].color = Color.grey;
-
-                pageImages[currentPageIndex].SetActive(true);
-                tabImages[currentPageIndex].color = Color.white;
-            }
-            else if (currentPageIndex < 0)
-            {
-                currentPageIndex = 0;
-            }
+            int newIndex = currentPageIndex - 1;
+            SetPageActive(Mathf.Clamp(newIndex, 0, tabImages.Length - 1));
         }
     }
 
@@ -57,21 +50,8 @@ public class TabController : MonoBehaviour
     {
         if (context.started)
         {
-            int previousPageIndex = currentPageIndex;
-            currentPageIndex++;
-            if (currentPageIndex < tabImages.Length)
-            {
-                pageImages[previousPageIndex].SetActive(false);
-                tabImages[previousPageIndex].color = Color.grey;
-
-                pageImages[currentPageIndex].SetActive(true);
-                tabImages[currentPageIndex].color = Color.white;
-            }
-            else if (tabImages.Length - 1 < currentPageIndex)
-            {
-                currentPageIndex = tabImages.Length - 1;
-            }
+            int newIndex = currentPageIndex + 1;
+            SetPageActive(Mathf.Clamp(newIndex, 0, tabImages.Length - 1));
         }
-
     }
 }

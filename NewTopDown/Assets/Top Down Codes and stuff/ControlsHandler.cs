@@ -5,6 +5,7 @@ public class ControlsHandler : MonoBehaviour
 {
     [SerializeField] PlayerInput playerInput;
 
+
     private void Awake()
     {
         if (playerInput == null)
@@ -12,22 +13,16 @@ public class ControlsHandler : MonoBehaviour
             playerInput = GameManager.instance.Player.GetComponent<PlayerInput>();
         }
     }
-    private void Update()
-    {
-        Debug.Log("New scheme: " + playerInput.currentControlScheme);
 
-    }
-    void OnEnable()
+    public void OnControlsChanged(PlayerInput input)
     {
-        playerInput.onControlsChanged += OnControlsChanged;
-    }
-    private void OnDisable()
-    {
-        playerInput.onControlsChanged -= OnControlsChanged;
-    }
-    void OnControlsChanged(PlayerInput input)
-    {
-        Debug.Log("TEST");
         Debug.Log("New scheme: " + input.currentControlScheme);
+        Debug.Log($"{GetBindingName("Interact")} to interact");
     }
+    string GetBindingName(string actionName)
+    {
+        var action = playerInput.actions[actionName];
+        return action.GetBindingDisplayString();
+    }
+
 }
