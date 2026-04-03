@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 3
   tags:
   - AllSlots
+  - Health Bar
+  - Player Canvas
+  - Game Manager
+  - Item Dictionary
+  - Controls Handler
+  - Audio Manager
+  - Event Handler
+  - Player Preference Handler
   layers:
   - Default
   - TransparentFX

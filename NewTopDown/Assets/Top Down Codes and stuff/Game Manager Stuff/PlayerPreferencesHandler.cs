@@ -1,31 +1,33 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class PlayerPreferencesHandler : MonoBehaviour
 {
 
-    public static GameManager instance;
-
-
-    [SerializeField] private Player player;
-    public Player Player => player;
-    
+    [Header("DEBUG STUFF")]
     [SerializeField] GameObject DEBUG_TEXT_GENERAL;
+    [SerializeField] Transform menuCanvas;
     public GameObject SettingsPage;
+    Player player;
 
     private void Awake()
     {
-        instance = this;
         SettingsPage.GetComponentInChildren<Toggle>().onValueChanged.AddListener(SetDefaultWalk_Sprint);// returns bool whenever changes
     }
 
-    private void Update()
+    private void Start()
     {
-        
+        player = GameManager.instance.Player;
+        if (menuCanvas == null)
+        {
+            GameManager.instance.nullReference_debugLogWarning("Menu Canvas", this.name);
+        }
+        if (SettingsPage == null)
+        {
+            GameManager.instance.nullReference_debugLogWarning("Settings Page", this.name);
+        }
     }
-
 
     public void SetDefaultWalk_Sprint(bool isDefaultWalking)
     {
@@ -38,26 +40,12 @@ public class GameManager : MonoBehaviour
         return player.GetComponent<PlayerMovement>().IsDefaultWalking;
     }
 
-    public void ResetGameDEBUG()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     public void DisplayDebugText(string text)
     {
         // Need to be under canvas gameobject to display
-        GameObject obj = Instantiate(DEBUG_TEXT_GENERAL, FindFirstObjectByType<Canvas>().transform); // Might have errors in future, but lazy now
+        GameObject obj = Instantiate(DEBUG_TEXT_GENERAL, menuCanvas); // Might have errors in future, but lazy now
         obj.GetComponent<TextMeshProUGUI>().SetText(text);
         //obj.transform.position = 
         Destroy(obj, 5f);
-    }
-
-    public void nullReference_debugLogWarning(string var_Name, string script_Name)
-    {
-        Debug.LogWarning($"{var_Name} is null under {script_Name}");
-    }
-    public void nullReference_debugLogWarning(string var_Name, string script_Name, string additional_Text)
-    {
-        Debug.LogWarning($"{var_Name} is null under {script_Name}. {additional_Text}");
     }
 }

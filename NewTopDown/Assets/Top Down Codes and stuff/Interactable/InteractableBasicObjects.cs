@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class InteractableBasicObjects : Interactable
 {
-    // Start is called before the first frame update
+
+
+
     protected override void Start()
     {
         base.Start();

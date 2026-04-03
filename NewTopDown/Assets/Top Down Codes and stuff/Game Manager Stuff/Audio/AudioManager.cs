@@ -4,7 +4,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-    public static AudioManager instance;
+    //public static AudioManager instance; // Game manager will be the only singleton
 
     public Sound[] sounds;
 
@@ -22,17 +22,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        instance = this;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //PlaySound("Main Theme");
-    }
 
     public void PlaySound(string name)
     {
