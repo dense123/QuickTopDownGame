@@ -8,11 +8,13 @@ public class Player : Character
 
     public System.Action InventorySizeChanged;
 
+    GameEvents gameEvents;
 
     protected override void Start()
     {
         base.Start();
-        healthEvent.OnHealthEvent += GainExp;
+        //gameEvents = GameManager.instance.gameEvents;
+        //gameEvents.OnKillingEvent += GainExp;
     }
 
     public void GainExp()

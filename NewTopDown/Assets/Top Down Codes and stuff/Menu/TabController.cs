@@ -9,7 +9,7 @@ public class TabController : MonoBehaviour
 
     [SerializeField] private Image[] tabImages;
     [SerializeField] private GameObject[] pageImages; // Set as gameobject instead of image so that we can setActive
-    int currentPageIndex = 0;
+    int currentPageIndex;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

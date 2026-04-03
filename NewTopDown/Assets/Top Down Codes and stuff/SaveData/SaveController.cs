@@ -8,11 +8,13 @@ public class SaveController : MonoBehaviour
     private string SettingsSaveLocation;
     Player player;
     InventoryController inventoryController;
+    PlayerPreferencesHandler playerPreferencesHandler;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameManager.instance.Player;
+        //playerPreferencesHandler = GameManager.instance.playerPrefsHandler;
         if (GetComponent<InventoryController>() != null)
             inventoryController = GetComponent<InventoryController>();
         else
@@ -33,18 +35,18 @@ public class SaveController : MonoBehaviour
         };
 
         File.WriteAllText(SaveLocation, JsonUtility.ToJson(saveData));
-        GameManager.instance.DisplayDebugText(JsonUtility.ToJson(saveData).ToString());
+        playerPreferencesHandler.DisplayDebugText(JsonUtility.ToJson(saveData).ToString());
     }
 
     public void SaveSettings()
     {
         SettingsData settingsData = new SettingsData
         {
-            isDefaultWalking = GameManager.instance.GetDefaultWalk_Sprint()
+            isDefaultWalking = playerPreferencesHandler.GetDefaultWalk_Sprint()
         };
 
         File.WriteAllText(SettingsSaveLocation, JsonUtility.ToJson(settingsData));
-        GameManager.instance.DisplayDebugText(JsonUtility.ToJson(settingsData).ToString());
+        playerPreferencesHandler.DisplayDebugText(JsonUtility.ToJson(settingsData).ToString());
     }
 
     public void LoadGame()
@@ -63,7 +65,7 @@ public class SaveController : MonoBehaviour
         {
             SettingsData settingsData = JsonUtility.FromJson<SettingsData>(File.ReadAllText(SettingsSaveLocation));
 
-            GameManager.instance.SetDefaultWalk_Sprint(settingsData.isDefaultWalking);
+            playerPreferencesHandler.SetDefaultWalk_Sprint(settingsData.isDefaultWalking);
         }
 
         else

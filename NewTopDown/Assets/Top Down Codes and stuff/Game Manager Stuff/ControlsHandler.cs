@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class ControlsHandler : MonoBehaviour
 {
     [SerializeField] PlayerInput playerInput;
+
+    public event Action<PlayerInput> ControlsChanged;
 
 
     private void Awake()
@@ -14,11 +18,21 @@ public class ControlsHandler : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        ControlsChanged += DebugChangedControls;
+    }
+
     public void OnControlsChanged(PlayerInput input)
     {
-        Debug.Log("New scheme: " + input.currentControlScheme);
-        Debug.Log($"{GetBindingName("Interact")} to interact");
+        ControlsChanged?.Invoke(input);
     }
+
+    void DebugChangedControls(PlayerInput input)
+    {
+        Debug.Log("New scheme: " + input.currentControlScheme);
+    }
+
     string GetBindingName(string actionName)
     {
         var action = playerInput.actions[actionName];

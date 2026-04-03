@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,8 +8,13 @@ using static UnityEngine.UI.Image;
 [RequireComponent (typeof(Player))]
 public class PlayerRaycasting : MonoBehaviour
 {
-    bool isInteractableInRange = false; // Will be set to true with on trigger collision
 
+
+    [Header("Interaction Visual Feedback")]
+    bool isInteractableInRange = false; // Will be set to true with on trigger collision
+    public GameObject interactionIndicator;
+
+    [Header("Raycast Lines")]
     [SerializeField] int numberOfRays;
     [SerializeField] float coneAngle;
     [SerializeField] private float distance;
@@ -18,6 +24,7 @@ public class PlayerRaycasting : MonoBehaviour
     float startAngle;
     float angleSpace;
 
+    [Header("Hashset Initialisation")]
     // Hashset isnt ordered, doesnt have indexes. Only able to store unique values
     public HashSet<GameObject> lastHitHashSet = new HashSet<GameObject>(); // Contain last hit colliders
     public HashSet<GameObject> currentHitHashSet = new HashSet<GameObject>();
@@ -25,25 +32,30 @@ public class PlayerRaycasting : MonoBehaviour
     private Vector2 direction;
     //Collider2D LastHitCollider;
 
+    [Header("Game Event")]
+    GameEvents gameEvents;
+
+    [Header("IDK")]
     [SerializeField] private Character character;
     private bool isKeyPressed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        interactionIndicator.SetActive (false);
         if (character == null)
             character = GetComponent<Character>();
+
+        //gameEvents = GameManager.instance.gameEvents;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
         if (!isInteractableInRange)
         {
-            //return;
+            return;
         }
 
         currentHitHashSet.Clear();
@@ -95,7 +107,10 @@ public class PlayerRaycasting : MonoBehaviour
             if (!lastHitHashSet.Contains(obj))
             {
                 lastHitHashSet.Add(obj);
-                obj.GetComponent<Interactable>().isHovering = true;
+                //OnRaycastHit?.Invoke(obj, true);
+                gameEvents?.InvokeHoveringEvent();
+                //obj.GetComponent<Interactable>().isHovering = true;
+                interactionIndicator.SetActive(true);
             }
         }
 
@@ -112,18 +127,11 @@ public class PlayerRaycasting : MonoBehaviour
             if (!currentHitHashSet.Contains(obj))
             {
                 lastHitHashSet.Remove(obj);
-                obj.GetComponent<Interactable>().isHovering = false;
+                //OnRaycastHit?.Invoke(obj, false);
+                //obj.GetComponent<Interactable>().isHovering = false;
+                interactionIndicator.SetActive(false);
             }
         }
-    }
-
-    public void DisplayDebugForRaycast(InputAction.CallbackContext context)
-    {
-        if (context.started)
-            isKeyPressed = true;
-        else if (context.canceled)
-            isKeyPressed = false;
-        Debug.Log(isKeyPressed);
     }
 
     public GameObject GetClosestHitCollider()
@@ -143,4 +151,26 @@ public class PlayerRaycasting : MonoBehaviour
         return closest;
     }
 
+
+
+    // Will Trigger raycast, for performance
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision == null)
+            return;
+        if (collision.gameObject.GetComponent<Interactable>())
+        {
+            isInteractableInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision == null)
+            return;
+        if (collision.gameObject.GetComponent<Interactable>())
+        {
+            isInteractableInRange = false;
+        }
+    }
 }
