@@ -9,34 +9,37 @@ using UnityEngine.InputSystem.UI;
 public class MenuController : MonoBehaviour
 {
 
-    [SerializeField] Transform PauseMenu;
-    [SerializeField] PlayerInput playerInput;
-    private InputSystemUIInputModule uiModule;
+    [SerializeField] GameObject PauseMenu;
+    //[SerializeField] PlayerInput playerInput;
+    //private InputSystemUIInputModule uiModule;
 
-    void Start()
+    private IEnumerator Start()
     {
-        PauseMenu.gameObject.SetActive(false);
+        yield return new WaitUntil(() => GameManager.Instance != null);
+        yield return new WaitUntil(() => GameManager.Instance.PauseMenu != null);
+        PauseMenu = GameManager.Instance.PauseMenu;
+        PauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
 
-        uiModule = EventSystem.current.GetComponent<InputSystemUIInputModule>();
+        //uiModule = EventSystem.current.GetComponent<InputSystemUIInputModule>();
 
-        if (playerInput == null)
-        {
-            GameManager.instance.nullReference_debugLogWarning("Player Input", this.name, "Will now find player gameobject!");
-            playerInput = FindFirstObjectByType<PlayerInput>();
-        }
+        //if (playerInput == null)
+        //{
+        //    GameManager.instance.nullReference_debugLogWarning("Player Input", this.name, "Will now find player gameobject!");
+        //    playerInput = FindFirstObjectByType<PlayerInput>();
+        //}
         EnterGameplay();
     }
     public void EnterGameplay()
     {
-        playerInput.SwitchCurrentActionMap("Player");
-        uiModule.enabled = false;
+        //playerInput.SwitchCurrentActionMap("Player");
+        //uiModule.enabled = false;
     }
 
     public void EnterMenu()
     {
-        playerInput.SwitchCurrentActionMap("UI"); // optional
-        uiModule.enabled = true;
+        //playerInput.SwitchCurrentActionMap("UI"); // optional
+        //uiModule.enabled = true;
     }
 
     public void PauseFunction(InputAction.CallbackContext context)
@@ -45,12 +48,12 @@ public class MenuController : MonoBehaviour
         {
             return;
         }
-        PauseMenuActivate(!PauseMenu.gameObject.activeSelf);
+        PauseMenuActivate(!PauseMenu.activeSelf);
     }
 
     void PauseMenuActivate(bool pause)
     {
-        PauseMenu.gameObject.SetActive(pause);
+        PauseMenu.SetActive(pause);
 
         if (pause)
         {

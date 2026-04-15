@@ -1,0 +1,341 @@
+fileFormatVersion: 2
+guid: 46e488ce10a87124dbedaa9718c8db98
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1187654412881639130
+    second: Player Punching_0
+  - first:
+      213: -8193482846651982105
+    second: Player Punching_1
+  - first:
+      213: -2408045578686037602
+    second: Player Punching_2
+  - first:
+      213: -5324288028672679976
+    second: Player Punching_3
+  - first:
+      213: -8616676511700474380
+    second: Player Punching_4
+  - first:
+      213: -6636704302268234709
+    second: Player Punching_5
+  - first:
+      213: -2560751335263646613
+    second: Player Punching_6
+  - first:
+      213: -6653227676640818483
+    second: Player Punching_7
+  - first:
+      213: -2893760986493904679
+    second: Player Punching_8
+  - first:
+      213: 1710993034637806548
+    second: Player Punching_9
+  - first:
+      213: 4584807247389424499
+    second: Player Punching_10
+  - first:
+      213: 5869637080069220019
+    second: Player Punching_11
+  - first:
+      213: -2160678900437698124
+    second: Player Punching_12
+  - first:
+      213: 4204291193865427887
+    second: Player Punching_13
+  - first:
+      213: -5722255386794862683
+    second: Player Punching_14
+  - first:
+      213: -5708848777795486699
+    second: Player Punching_15
+  - first:
+      213: 8099255869339807290
+    second: Player Punching_16
+  - first:
+      213: 3634845455253759378
+    second: Player Punching_17
+  - first:
+      213: -689537711881863342
+    second: Player Punching_18
+  - first:
+      213: -7484882009978673607
+    second: Player Punching_19
+  - first:
+      213: -7130503720721896699
+    second: Player Punching_20
+  - first:
+      213: 3608924622745107738
+    second: Player Punching_21
+  - first:
+      213: 753566657560870297
+    second: Player Punching_22
+  - first:
+      213: 4857660162656412463
+    second: Player Punching_23
+  - first:
+      213: 3709948777195083065
+    second: Player Punching_24
+  - first:
+      213: -8869542694136625174
+    second: Player Punching_25
+  - first:
+      213: -6255045393900842997
+    second: Player Punching_26
+  - first:
+      213: 5789809695033750460
+    second: Player Punching_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player Punching Front Impact
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 50
+        width: 150
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee5d0c03c6ea4e80800000000000000
+      internalID: -8193482846651982105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Punching Right Wind
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 50
+        width: 120
+        height: 180
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e910877fd47e49ed0800000000000000
+      internalID: -2408045578686037602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Punching Left Impact
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 50
+        width: 180
+        height: 160
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24ceff8990b5e3a0800000000000000
+      internalID: -6636704302268234709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Punching Front Wind
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 40
+        width: 140
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf6735f529ae0d641b6e8d8c535c9c11
+      internalID: -1240752467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Punching Right Impact
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 50
+        width: 180
+        height: 160
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73238736c71357847ba3426a61d551bf
+      internalID: -2560751335263646613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Punching Left Wind
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 50
+        width: 120
+        height: 180
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72dd00e6433fb4342869575273aadb47
+      internalID: 161574330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ba55e048dd0b83a41b770c18c4318dc7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Player Punching Front Impact: -8193482846651982105
+      Player Punching Front Wind: 1187654412881639130
+      Player Punching Left Impact: -6636704302268234709
+      Player Punching Left Wind: -8616676511700474380
+      Player Punching Right Impact: -5324288028672679976
+      Player Punching Right Wind: -2408045578686037602
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

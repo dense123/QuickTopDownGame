@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 5cbf08be6fc8cbe4badb36df86d98688
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3540567828034470808
+    second: player punch 2_0
+  - first:
+      213: -7808696205463734764
+    second: player punch 2_1
+  - first:
+      213: -801327354588222984
+    second: player punch 2_2
+  - first:
+      213: -3178588302311040514
+    second: player punch 2_3
+  - first:
+      213: 6032450208659113590
+    second: player punch 2_4
+  - first:
+      213: 1444018166059876878
+    second: player punch 2_5
+  - first:
+      213: 4139424873894067507
+    second: player punch 2_6
+  - first:
+      213: -172503762187019767
+    second: player punch 2_7
+  - first:
+      213: 2368354731309699057
+    second: player punch 2_8
+  - first:
+      213: -918618511013602801
+    second: player punch 2_9
+  - first:
+      213: -7716987349068298505
+    second: player punch 2_10
+  - first:
+      213: -5399399627060432350
+    second: player punch 2_11
+  - first:
+      213: -1431594364397353443
+    second: player punch 2_12
+  - first:
+      213: 660948607202419229
+    second: player punch 2_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: player punch 2_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 39
+        width: 142
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86c34d2b1506ddec0800000000000000
+      internalID: -3540567828034470808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_1
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 49
+        width: 152
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 416b4626c20f1a390800000000000000
+      internalID: -7808696205463734764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_2
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 49
+        width: 122
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f927f0440d11e4f0800000000000000
+      internalID: -801327354588222984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_3
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 49
+        width: 182
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9d989a7c263e3d0800000000000000
+      internalID: -3178588302311040514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_4
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 49
+        width: 122
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6768b54e08197b350800000000000000
+      internalID: 6032450208659113590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_5
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 49
+        width: 182
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e02c53d0fde2a0410800000000000000
+      internalID: 1444018166059876878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_6
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 49
+        width: 122
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33d3fdebdf0327930800000000000000
+      internalID: 4139424873894067507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_7
+      rect:
+        serializedVersion: 2
+        x: 2339
+        y: 49
+        width: 192
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a9c640eb42b9df0800000000000000
+      internalID: -172503762187019767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_8
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 49
+        width: 182
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff84dd74161ed020800000000000000
+      internalID: 2368354731309699057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_9
+      rect:
+        serializedVersion: 2
+        x: 2969
+        y: 39
+        width: 202
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a9feec4596043f0800000000000000
+      internalID: -918618511013602801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_10
+      rect:
+        serializedVersion: 2
+        x: 3299
+        y: 49
+        width: 122
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f6c99274e0c7e490800000000000000
+      internalID: -7716987349068298505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_11
+      rect:
+        serializedVersion: 2
+        x: 3549
+        y: 49
+        width: 192
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 222bfac75aa7115b0800000000000000
+      internalID: -5399399627060432350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_12
+      rect:
+        serializedVersion: 2
+        x: 3869
+        y: 49
+        width: 182
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1605afa284f12ce0800000000000000
+      internalID: -1431594364397353443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player punch 2_13
+      rect:
+        serializedVersion: 2
+        x: 4189
+        y: 39
+        width: 202
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d12e613a1492c2900800000000000000
+      internalID: 660948607202419229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      player punch 2_0: -3540567828034470808
+      player punch 2_1: -7808696205463734764
+      player punch 2_10: -7716987349068298505
+      player punch 2_11: -5399399627060432350
+      player punch 2_12: -1431594364397353443
+      player punch 2_13: 660948607202419229
+      player punch 2_2: -801327354588222984
+      player punch 2_3: -3178588302311040514
+      player punch 2_4: 6032450208659113590
+      player punch 2_5: 1444018166059876878
+      player punch 2_6: 4139424873894067507
+      player punch 2_7: -172503762187019767
+      player punch 2_8: 2368354731309699057
+      player punch 2_9: -918618511013602801
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

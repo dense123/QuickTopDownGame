@@ -20,8 +20,8 @@ public class PlayerInteract : MonoBehaviour
         {
             if (interactionTarget != null)
             {
-                interactionTarget = playerRaycasting.GetClosestHitCollider();
-                interactionTarget.GetComponent<Interactable>().isInteractedWith = true;
+                //interactionTarget = playerRaycasting.GetClosestHitCollider();
+                //interactionTarget.GetComponent<Interactable>().isInteractedWith = true;
             }        
         }
     }
