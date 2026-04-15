@@ -5,37 +5,49 @@ using UnityEngine.Windows;
 
 public class ControlsHandler : MonoBehaviour
 {
-    [SerializeField] PlayerInput playerInput;
 
-    public event Action<PlayerInput> ControlsChanged;
+
+    public InputSystem_Actions InputSystem_Actions_PlayerInput { get; private set; }
+    public event Action<InputSystem_Actions> ControlsChanged;
 
 
     private void Awake()
     {
-        if (playerInput == null)
-        {
-            playerInput = GameManager.instance.Player.GetComponent<PlayerInput>();
-        }
+        InputSystem_Actions_PlayerInput = new InputSystem_Actions();
+        // Enable the input on the script itself
+        InputSystem_Actions_PlayerInput.Disable();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         ControlsChanged += DebugChangedControls;
     }
 
-    public void OnControlsChanged(PlayerInput input)
+    private void OnDisable()
     {
-        ControlsChanged?.Invoke(input);
+        ControlsChanged -= DebugChangedControls;
     }
 
-    void DebugChangedControls(PlayerInput input)
+    private void Start()
     {
-        Debug.Log("New scheme: " + input.currentControlScheme);
+
+    }
+
+
+
+    //public void OnControlsChanged(PlayerInput input)
+    //{
+    //    ControlsChanged?.Invoke(input);
+    //}
+
+    void DebugChangedControls(InputSystem_Actions input)
+    {
+        Debug.Log("New scheme: " + input.controlSchemes);
     }
 
     string GetBindingName(string actionName)
     {
-        var action = playerInput.actions[actionName];
+        var action = InputSystem_Actions_PlayerInput.FindAction(actionName);
         return action.GetBindingDisplayString();
     }
 

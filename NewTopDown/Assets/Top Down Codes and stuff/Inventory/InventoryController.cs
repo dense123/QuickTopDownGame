@@ -1,4 +1,4 @@
-using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,16 +17,18 @@ public class InventoryController : MonoBehaviour
     public GameObject genericItemUIPrefab;
     ItemDictionary itemDictionary;
 
-    void Start()
+    private IEnumerator Start()
     {
-        player = GameManager.instance.Player;
+        yield return new WaitUntil(() => GameManager.Instance != null);
+        player = GameManager.Instance.Player;
+        inventoryPage = GameManager.Instance.InventoryPage;
         slotCount = player.MaxInventorySlots;
 
         transform.GetChild(0).TryGetComponent(out ItemDictionary itemDic);
         if (itemDic != null)
             itemDictionary = itemDic;
         else
-            GameManager.instance.nullReference_debugLogWarning("itemDictionary", this.name);
+            GameManager.Instance.nullReference_debugLogWarning("itemDictionary", this.name);
 
             /*        //for (int i = 0; i < player.MaxInventorySlots; i++)
                     //{
@@ -46,6 +48,7 @@ public class InventoryController : MonoBehaviour
         if (slotCount < player.MaxInventorySlots)
         {
             slotCount = player.MaxInventorySlots;
+            // Instantiate under slots
             GameObject obj = Instantiate(slotPrefab, inventoryPage.GetComponentInChildren<GridLayoutGroup>().transform);
             obj.name = "NEW SLOT";
         }
@@ -113,7 +116,7 @@ public class InventoryController : MonoBehaviour
                 }
             }
             else
-                GameManager.instance.nullReference_debugLogWarning("itemDictionary", this.name, "This is under SetInventoryItems");
+                GameManager.Instance.nullReference_debugLogWarning("itemDictionary", this.name, "This is under SetInventoryItems");
         }
     }
 }

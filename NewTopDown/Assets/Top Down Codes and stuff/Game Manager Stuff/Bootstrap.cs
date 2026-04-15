@@ -8,21 +8,21 @@ public class Bootstrap : MonoBehaviour
 
     private void Awake()
     {   
-        // Prevent duplicates if scene reloads
-        if (FindObjectsOfType<Bootstrap>().Length > 1)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        //// Prevent duplicates if scene reloads
+        //if (FindObjectsOfType<Bootstrap>().Length > 1)
+        //{
+        //    Destroy(gameObject);
+        //    return;
+        //}
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
-        InitializeSystems();
+        //InitializeSystems();
     }
 
     private void Start()
     {
-        SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
     private void InitializeSystems()
@@ -30,7 +30,7 @@ public class Bootstrap : MonoBehaviour
         // Example:
         // Instantiate managers or ensure they exist
 
-        if (GameManager.instance == null)
+        if (GameManager.Instance == null)
         {
             Instantiate(gameManagerPrefab);
         }

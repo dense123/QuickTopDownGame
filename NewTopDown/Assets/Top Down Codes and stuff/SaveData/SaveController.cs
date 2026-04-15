@@ -1,3 +1,4 @@
+using System.Collections;
 using System.IO;
 using UnityEngine;
 
@@ -10,19 +11,27 @@ public class SaveController : MonoBehaviour
     InventoryController inventoryController;
     PlayerPreferencesHandler playerPreferencesHandler;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private IEnumerator Start()
     {
-        player = GameManager.instance.Player;
-        //playerPreferencesHandler = GameManager.instance.playerPrefsHandler;
-        if (GetComponent<InventoryController>() != null)
-            inventoryController = GetComponent<InventoryController>();
-        else
-            Debug.LogWarning($"{this.name} doesn't have reference to Inventory Controller");
         SaveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
         SettingsSaveLocation = Path.Combine(Application.persistentDataPath, "settingsData.json");
+        
+        yield return new WaitUntil(() => GameManager.Instance != null);
+        player = GameManager.Instance.Player;
+        if (player == null)
+            yield return null;
 
-        LoadGame();
+        playerPreferencesHandler = GameManager.Instance.playerPrefsHandler;
+
+        inventoryController = GameManager.Instance.InventoryController;
+        if (GetComponent<InventoryController>() == null)
+            Debug.LogWarning($"{this.name} doesn't have reference to Inventory Controller");
+
+    }
+
+    private void OnDisable()
+    {
     }
 
 
@@ -49,6 +58,7 @@ public class SaveController : MonoBehaviour
         playerPreferencesHandler.DisplayDebugText(JsonUtility.ToJson(settingsData).ToString());
     }
 
+    // Will be called when play button event is triggered
     public void LoadGame()
     {
         if (File.Exists(SaveLocation)) 
